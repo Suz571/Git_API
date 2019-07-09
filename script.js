@@ -13,7 +13,7 @@ fetch(apiPath)
 
 }
 
-function status(responseJson){
+function status(response){
     if(!response.ok){
         throw alert("User not found. Try again.");
     }
@@ -24,10 +24,10 @@ function displayResults(responseJson){
     $('#results-list').empty();
     for (let i = 0; i < responseJson.length; i++) {
         $('#results-list').append(
-            `<h3>Your Results:</h3>
+            `<h3>Repos</h3>
             <li>
             <p>${responseJson[i].name}</p>
-            <p><a href="${response.Json[i].html_url}"></a></p>
+            <p><a href="${responseJson[i].html_url}"></a></p>
             </li>`
         )};
     $('#results').removeClass('hidden');
